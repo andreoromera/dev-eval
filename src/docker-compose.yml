@@ -6,7 +6,7 @@ services:
     image: ${DOCKER_REGISTRY-}ambevdeveloperevaluationwebapi
     build:
       context: .
-      dockerfile: src/Ambev.DeveloperEvaluation.WebApi/Dockerfile
+      dockerfile: Ambev.DeveloperEvaluation.WebApi/Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
@@ -27,7 +27,7 @@ services:
       POSTGRES_USER: developer
       POSTGRES_PASSWORD: ev@luAt10n
     ports:
-      - "5432"
+      - "5432:5432"
     restart: unless-stopped
 
   ambev.developerevaluation.nosql:
