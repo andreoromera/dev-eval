@@ -18,6 +18,6 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(u => u.Description).IsRequired().HasMaxLength(1000);
         builder.Property(u => u.Category).IsRequired().HasMaxLength(100);
         builder.Property(u => u.Image).HasColumnType("text").IsRequired();
-        builder.Property(u => u.Price).IsRequired();
+        builder.Property(u => u.Price).HasColumnType("money").IsRequired();
     }
 }
