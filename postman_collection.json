@@ -1,0 +1,1157 @@
+{
+	"info": {
+		"_postman_id": "1bec3b07-543c-4612-bec8-866694064b63",
+		"name": "Ambev.DeveloperEvaluation.WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9052530"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "/api/Auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var data = JSON.parse(pm.response.text());\r",
+											"pm.collectionVariables.set(\"token\", data.data.token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"john@ambev.com.br\",\n  \"password\": \"!2e456T8\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Auth"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"data\": {\n    \"token\": \"<string>\",\n    \"email\": \"<string>\",\n    \"name\": \"<string>\",\n    \"role\": \"<string>\"\n  }\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+								},
+								{
+									"name": "Unauthorized",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Auth",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Auth"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Products/:id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "64eda156-f750-44e2-b938-ecc94f3d2540",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"data\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"category\": \"<string>\",\n    \"image\": \"<string>\",\n    \"price\": \"<double>\"\n  }\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Products/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "64eda156-f750-44e2-b938-ecc94f3d2540",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Products",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"Spaten\",\n  \"description\": \"Criadora do estilo munich helles e com sabor de malte na medida\",\n  \"category\": \"Beer\",\n  \"image\": \"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\",\n  \"price\": \"5.12\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"category\": \"<string>\",\n  \"image\": \"<string>\",\n  \"price\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Products",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"data\": {\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"category\": \"<string>\",\n    \"image\": \"<string>\",\n    \"price\": \"<double>\"\n  }\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"category\": \"<string>\",\n  \"image\": \"<string>\",\n  \"price\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Products",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Users/:id",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "96cbd6d4-61e4-412d-95cd-e17d0a82a5cc",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"role\": 2,\n    \"status\": 0\n  }\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Users/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "e650b93f-9115-4119-bd25-fe75ac4f0696",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Users",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"andreo\",\n  \"password\": \"!2e456T8\",\n  \"phone\": \"11984151668\",\n  \"email\": \"andreoromera@gmail.com\",\n  \"status\": 1,\n  \"role\": 1\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": 1,\n  \"role\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ],\n  \"data\": {\n    \"id\": \"<uuid>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"phone\": \"<string>\",\n    \"role\": 2,\n    \"status\": 0\n  }\n}"
+								},
+								{
+									"name": "Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"email\": \"<string>\",\n  \"status\": 1,\n  \"role\": 1\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<boolean>\",\n  \"message\": \"<string>\",\n  \"errors\": [\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    },\n    {\n      \"error\": \"<string>\",\n      \"detail\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
