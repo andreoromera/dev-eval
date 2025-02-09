@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -36,6 +37,10 @@ namespace Ambev.DeveloperEvaluation.Common.Security
                     ClockSkew = TimeSpan.Zero
                 };
             });
+
+            services.AddAuthorization(x => x.FallbackPolicy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build());
 
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
 
