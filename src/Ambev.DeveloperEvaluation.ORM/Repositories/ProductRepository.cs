@@ -45,6 +45,17 @@ public class ProductRepository : IProductRepository
     }
 
     /// <summary>
+    /// Retrieves a product by its title
+    /// </summary>
+    /// <param name="title">The title of the product</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>The product if found, null otherwise</returns>
+    public async Task<Product?> GetByTitleAsync(string title, CancellationToken cancellationToken = default)
+    {
+        return await _context.Products.FirstOrDefaultAsync(o => o.Title.Equals(title, StringComparison.InvariantCultureIgnoreCase), cancellationToken);
+    }
+
+    /// <summary>
     /// Deletes a product from the database
     /// </summary>
     /// <param name="id">The unique identifier of the product to delete</param>
