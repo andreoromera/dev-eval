@@ -52,7 +52,7 @@ public class ProductRepository : IProductRepository
     /// <returns>The product if found, null otherwise</returns>
     public async Task<Product?> GetByTitleAsync(string title, CancellationToken cancellationToken = default)
     {
-        return await _context.Products.FirstOrDefaultAsync(o => o.Title.Equals(title, StringComparison.InvariantCultureIgnoreCase), cancellationToken);
+        return await _context.Products.FirstOrDefaultAsync(o => o.Title.ToLower() == title.ToLower(), cancellationToken);
     }
 
     /// <summary>
