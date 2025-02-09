@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ambev.DeveloperEvaluation.ORM.Migrations
 {
     /// <inheritdoc />
-    public partial class Product : Migration
+    public partial class CreateProductsTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

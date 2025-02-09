@@ -2,7 +2,6 @@ using Ambev.DeveloperEvaluation.Domain.Common;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities;
 
-
 /// <summary>
 /// Represents a product in the system.
 /// </summary>
