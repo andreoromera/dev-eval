@@ -27,15 +27,15 @@ So, once you have finished the steps above, you should expect to have a new data
 *Ps: all users are set with the same password, which is* **!2e456T8**
 
 ## Testing the webapi
-Once you have the webapi up and running, you can inspect the swagger (/swagger/index.html) to interact with the endpoints.
+Once you have the webapi up and running, you can inspect swagger (/swagger/index.html) to interact with the endpoints.
 
 If you prefer, you can find at the root folder a Postman Collection file you can import in Postman to test the api.
 
 Either way, you should:
 ```
-1. Call any user or product endpoints without authentication to see error 401 - Unauthorized
+1. Call any user or product endpoints without authentication to see error 401 (Unauthorized)
 2. Call the /api/Auth endpoint to get a valid token. There is a script already attached to this action 
-   that creates a Postman Collection Variable with the returned token, so you don't have to manually set the 
-   bearer token for each endpoint yourself :-)
+   that creates a Postman Collection Variable with the returned token, so you don't have to manually 
+   set the bearer token for each endpoint yourself :-)
 3. Now you can expect to have successful calls to whatever endpoint you like.
 ```
